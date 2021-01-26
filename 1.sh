@@ -1,5 +1,5 @@
 #!/bin/bash
-ech "   1.install screen      2.install/update idena node
+echo "   1.install screen      2.install/update idena node
    3.get api.key         4.exchange api.key
    5.get idena nodekey   6.killall screen and exchange nodekey
    7.reboot/start  idena   8.killall screen（idena）
