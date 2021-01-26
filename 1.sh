@@ -70,6 +70,6 @@ rm -rf ipfs;
 elif [[ "$num" -eq 11 ]];
 screen -r;
 
-elif [[ "$num" -eq 12 ]];
+if [[ "$num" -eq 12 ]];
 reboot
 fi
