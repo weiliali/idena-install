@@ -10,6 +10,7 @@ read num
 if [[ "$num" -eq 1 ]];
 then
 apt update -y
+apt install psmisc -y
 apt install screen -y;
 
 elif [[ "$num" -eq 2 ]];
