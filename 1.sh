@@ -30,6 +30,8 @@ cat ./idena/datadir/api.key;
 
 elif [[ "$num" -eq 4 ]];
 then
+cd ~
+cd idena
 echo Type in new api
 read api
 screen -d -m ./idena-go --apikey=$api;
