@@ -25,6 +25,7 @@ screen -d -m ./idena-go;
 
 elif [[ "$num" -eq 3 ]];
 then
+cd ~
 cat ./idena/datadir/api.key;
 
 elif [[ "$num" -eq 4 ]];
@@ -35,10 +36,12 @@ screen -d -m ./idena-go --apikey=$api;
 
 elif [[ "$num" -eq 5 ]];
 then
+cd ~
 cat ./idena/datadir/keystore/nodekey;
 
 elif [[ "$num" -eq 6 ]];
 then
+cd ~
 killall screen
 nano ./idena/datadir/keystore/nodekey;
 screen -d -m ./idena-go;
