@@ -21,7 +21,7 @@ mkdir idena
 cd ./idena && wget https://github.com/idena-network/idena-go/releases/download/v$version/idena-node-linux-$version
 mv idena-node-linux-$version idena-go
 chmod +x idena-go
-screen -d -m ./idena-go --apikey=123;
+screen -d -m ./idena-go;
 
 elif [[ "$num" -eq 3 ]];
 then
@@ -29,9 +29,11 @@ cat ./idena/datadir/api.key;
 
 elif [[ "$num" -eq 4 ]];
 then
-nano ./idena/datadir/api.key;
+echo Type in new api
+read api
+screen -d -m ./idena-go --apikey=api;
 
-if [[ "$num" -eq 5 ]];
+elif [[ "$num" -eq 5 ]];
 then
 cat ./idena/datadir/keystore/nodekey;
 
@@ -39,13 +41,13 @@ elif [[ "$num" -eq 6 ]];
 then
 killall screen
 nano ./idena/datadir/keystore/nodekey;
-screen -d -m ./idena-go --apikey=123;
+screen -d -m ./idena-go;
 
 elif [[ "$num" -eq 7 ]];
 then 
 cd ~
 cd idena
-screen -d -m ./idena-go --apikey=123;
+screen -d -m ./idena-go;
 
 elif [[ "$num" -eq 8 ]];
 then 
@@ -56,7 +58,7 @@ then
 cd ~
 cd ./idena/
 chmod +x idena-go
-screen -d -m ./idena-go --apikey=123;
+screen -d -m ./idena-go;
 
 elif [[ "$num" -eq 10 ]];
 then 
