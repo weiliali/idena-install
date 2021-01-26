@@ -68,8 +68,10 @@ cd datadir
 rm -rf ipfs;
 
 elif [[ "$num" -eq 11 ]];
+then
 screen -r;
 
 if [[ "$num" -eq 12 ]];
+then 
 reboot
 fi
