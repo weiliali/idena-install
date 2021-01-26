@@ -31,7 +31,7 @@ elif [[ "$num" -eq 4 ]];
 then
 nano ./idena/datadir/api.key;
 
-elif [[ "$num" -eq 5 ]];
+if [[ "$num" -eq 5 ]];
 then
 cat ./idena/datadir/keystore/nodekey;
 
