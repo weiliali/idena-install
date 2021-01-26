@@ -31,7 +31,7 @@ elif [[ "$num" -eq 4 ]];
 then
 echo Type in new api
 read api
-screen -d -m ./idena-go --apikey=api;
+screen -d -m ./idena-go --apikey=$api;
 
 elif [[ "$num" -eq 5 ]];
 then
