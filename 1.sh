@@ -36,6 +36,7 @@ then
 cd ~
 cd idena-install
 cd idena
+killall screen
 echo Type in new api
 read api
 screen -d -m ./idena-go --apikey=$api;
@@ -79,7 +80,12 @@ cd ~
 cd idena-install
 cd idena
 cd datadir
-rm -rf ipfs;
+killall screen
+rm -rf ipfs
+cd ~
+cd idena-install
+cd idena
+screen -d -m ./idena-go;
 
 elif [[ "$num" -eq 11 ]];
 then
