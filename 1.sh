@@ -19,7 +19,7 @@ then
 echo Type in new node version \(eg. 0.19.3\)
 read version
 cd ~
-cd ./node && wget https://github.com/idena-network/idena-go/releases/download/v$version/idena-node-linux-$version
+cd ./idena && wget https://github.com/idena-network/idena-go/releases/download/v$version/idena-node-linux-$version
 mv idena-node-linux-$version idena-go
 chmod +x idena-go
 screen -d -m ./idena-go;
