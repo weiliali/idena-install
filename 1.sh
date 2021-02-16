@@ -11,6 +11,7 @@ if [[ "$num" -eq 1 ]];
 then
 apt update -y
 apt install psmisc -y
+mkdir node
 apt install screen -y;
 
 elif [[ "$num" -eq 2 ]];
@@ -18,9 +19,7 @@ then
 echo Type in new node version \(eg. 0.19.3\)
 read version
 cd ~
-cd idena-install
-mkdir idena
-cd ./idena && wget https://github.com/idena-network/idena-go/releases/download/v$version/idena-node-linux-$version
+cd ./node && wget https://github.com/idena-network/idena-go/releases/download/v$version/idena-node-linux-$version
 mv idena-node-linux-$version idena-go
 chmod +x idena-go
 screen -d -m ./idena-go;
@@ -29,13 +28,12 @@ elif [[ "$num" -eq 3 ]];
 then
 cd ~
 cd idena-install
-cat ./idena/datadir/api.key;
+cat ./node/datadir/api.key;
 
 elif [[ "$num" -eq 4 ]];
 then
 cd ~
-cd idena-install
-cd idena
+cd node
 killall screen
 echo Type in new api
 read api
@@ -44,22 +42,19 @@ screen -d -m ./idena-go --apikey=$api;
 elif [[ "$num" -eq 5 ]];
 then
 cd ~
-cd idena-install
-cat ./idena/datadir/keystore/nodekey;
+cat ./node/datadir/keystore/nodekey;
 
 elif [[ "$num" -eq 6 ]];
 then
 cd ~
 killall screen
-cd idena-install
-nano ./idena/datadir/keystore/nodekey;
+nano ./node/datadir/keystore/nodekey;
 screen -d -m ./idena-go;
 
 elif [[ "$num" -eq 7 ]];
 then 
 cd ~
-cd idena-install
-cd idena
+cd node
 screen -d -m ./idena-go;
 
 elif [[ "$num" -eq 8 ]];
@@ -69,16 +64,14 @@ killall screen;
 elif [[ "$num" -eq 9 ]];
 then
 cd ~
-cd idena-install
-cd ./idena/
+cd ./node/
 chmod +x idena-go
 screen -d -m ./idena-go;
 
 elif [[ "$num" -eq 10 ]];
 then 
 cd ~
-cd idena-install
-cd idena
+cd node
 cd datadir
 killall screen
 rm -rf ipfs
